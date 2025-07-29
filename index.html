@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você me ama?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url(img/gatinho.jpg) no-repeat center center fixed; /*imagem local*/
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .sim {
+            background-color: red;
+            color: white;
+        }
+
+        .nao {
+            background-color: rgb(252, 0, 0);
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você me ama? Moh Moh 😍</h1>
+    <div class="buttons">
+        <button class="sim" onclick="window.location.href='https://www.youtube.com/watch?v=Jr6LyMe5BJo&list=RDJr6LyMe5BJo&start_radio=1'">Sim ❤️</button>
+        <button class="nao" id="btnNao">Não</button>
+    </div>
+
+    <script>
+        const btnNao = document.getElementById('btnNao');
+
+        btnNao.addEventListener('mouseover', () => {
+            btnNao.style.position = 'absolute';
+            const larguraTela = window.innerWidth - btnNao.offsetWidth;
+            const alturaTela = window.innerHeight - btnNao.offsetHeight;
+
+            const novaPosX = Math.random() * larguraTela;
+            const novaPosY = Math.random() * alturaTela;
+
+            btnNao.style.left = `${novaPosX}px`;
+            btnNao.style.top = `${novaPosY}px`;
+        });
+    </script>
+</body>
+</html>
